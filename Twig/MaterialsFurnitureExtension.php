@@ -21,7 +21,7 @@
  *  THE SOFTWARE.
  */
 
-namespace BaksDev\Reference\MaterialsFurniture\Twig;
+namespace BaksDev\Reference\Materials\Furniture\Twig;
 
 use BaksDev\Reference\Materials\Furniture\Type\MaterialsFurniture;
 use Twig\Environment;
