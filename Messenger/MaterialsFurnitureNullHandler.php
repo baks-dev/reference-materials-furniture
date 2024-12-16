@@ -21,16 +21,14 @@
  *  THE SOFTWARE.
  */
 
-namespace Symfony\Component\DependencyInjection\Loader\Configurator;
+declare(strict_types=1);
 
-use BaksDev\Reference\Materials\Furniture\BaksDevReferenceMaterialsFurnitureBundle;
-use Symfony\Config\TwigConfig;
+namespace BaksDev\Reference\Materials\Furniture\Messenger;
 
-return static function(TwigConfig $twig) {
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-    $twig->path(
-        BaksDevReferenceMaterialsFurnitureBundle::PATH.implode(DIRECTORY_SEPARATOR, ['Resources', 'view', '']),
-        'reference-materials-furniture'
-    );
-
-};
+#[AsMessageHandler(priority: 0)]
+final class MaterialsFurnitureNullHandler
+{
+    public function __invoke(MaterialsFurnitureHandlerMessage $message): void {}
+}
