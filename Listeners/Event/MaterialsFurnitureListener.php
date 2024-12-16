@@ -37,10 +37,10 @@ use Symfony\Component\HttpKernel\Event\ControllerEvent;
  */
 #[AsEventListener(event: ControllerEvent::class)]
 #[AsEventListener(event: ConsoleEvents::COMMAND)]
-final class MaterialsFurnitureListener
+final readonly class MaterialsFurnitureListener
 {
 
-    public function __construct(private readonly MaterialsFurnitureCollection $collection) {}
+    public function __construct(private MaterialsFurnitureCollection $collection) {}
 
 
     public function onKernelController(ControllerEvent $event): void
