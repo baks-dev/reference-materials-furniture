@@ -134,7 +134,9 @@ final class MaterialsFurnitureTest extends KernelTestCase
             self::assertTrue($Material->equals($Material)); // объект класса
 
             $MaterialsFurnitureType = new MaterialsFurnitureType();
-            $platform = $this->getMockForAbstractClass(AbstractPlatform::class);
+            $platform = $this
+                ->getMockBuilder(AbstractPlatform::class)
+                ->getMock();
 
             $convertToDatabase = $MaterialsFurnitureType->convertToDatabaseValue($Material, $platform);
             self::assertEquals($Material->getMaterialValue(), $convertToDatabase);
