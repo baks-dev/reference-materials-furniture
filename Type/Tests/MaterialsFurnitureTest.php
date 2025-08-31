@@ -33,13 +33,12 @@ use BaksDev\Reference\Materials\Furniture\Type\MaterialsFurniture;
 use BaksDev\Reference\Materials\Furniture\Type\MaterialsFurnitureType;
 use BaksDev\Users\Profile\UserProfile\Type\Id\UserProfileUid;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use PHPUnit\Framework\Attributes\Group;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\DependencyInjection\Attribute\When;
 
-/**
- * @group reference-materials-furniture
- */
 #[When(env: 'test')]
+#[Group('reference-materials-furniture')]
 final class MaterialsFurnitureTest extends KernelTestCase
 {
     private static OzonAuthorizationToken $Authorization;
