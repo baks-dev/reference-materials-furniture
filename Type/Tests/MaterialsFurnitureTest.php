@@ -126,7 +126,7 @@ final class MaterialsFurnitureTest extends KernelTestCase
         }
 
 
-        self::assertCount(129, $cases);
+        self::assertCount(130, $cases);
 
         /** @var MaterialsFurnitureInterface $case */
         foreach($cases as $case)
