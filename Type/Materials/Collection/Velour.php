@@ -36,14 +36,6 @@ final class Velour implements MaterialsFurnitureInterface
     public const string MATERIAL = 'VELOUR';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -63,9 +55,17 @@ final class Velour implements MaterialsFurnitureInterface
             'велюр',
             'велюр искусственный',
             'велюр натуральный',
-            'velour'
+            'velour',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

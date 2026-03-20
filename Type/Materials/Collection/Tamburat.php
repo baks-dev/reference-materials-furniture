@@ -36,14 +36,6 @@ final class Tamburat implements MaterialsFurnitureInterface
     public const string MATERIAL = 'TAMBURAT';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,5 +53,13 @@ final class Tamburat implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'тамбурат', 'tamburat'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

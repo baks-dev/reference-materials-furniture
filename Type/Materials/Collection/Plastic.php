@@ -36,14 +36,6 @@ final class Plastic implements MaterialsFurnitureInterface
     public const string MATERIAL = 'PLASTIC';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -65,9 +57,17 @@ final class Plastic implements MaterialsFurnitureInterface
             'биопластик',
             'искусственный ротанг (пластик)',
             'пвх, пенопласт, пластик',
-            'plastic'
+            'plastic',
         ];
 
         return in_array(mb_strtolower($material), $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

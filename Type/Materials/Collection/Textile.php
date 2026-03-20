@@ -36,14 +36,6 @@ final class Textile implements MaterialsFurnitureInterface
     public const string MATERIAL = 'TEXTILE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -59,5 +51,13 @@ final class Textile implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'текстиль', 'ткань', 'textile'];
 
         return in_array(mb_strtolower($material), $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

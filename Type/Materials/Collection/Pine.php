@@ -36,14 +36,6 @@ final class Pine implements MaterialsFurnitureInterface
     public const string MATERIAL = 'PINE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -63,9 +55,17 @@ final class Pine implements MaterialsFurnitureInterface
             'сосна',
             'массив сосны',
             'сибирская сосна',
-            'pine'
+            'pine',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

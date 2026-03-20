@@ -36,14 +36,6 @@ final class PEVA implements MaterialsFurnitureInterface
     public const string MATERIAL = 'PEVA';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -60,9 +52,17 @@ final class PEVA implements MaterialsFurnitureInterface
 
         $haystack = [
             mb_strtolower(self::MATERIAL),
-            'пева (полиэтиленвинилацетат)'
+            'пева (полиэтиленвинилацетат)',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

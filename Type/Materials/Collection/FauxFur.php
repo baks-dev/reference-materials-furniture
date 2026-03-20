@@ -36,14 +36,6 @@ final class FauxFur implements MaterialsFurnitureInterface
     public const string MATERIAL = 'FAUX_FUR';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,9 +53,17 @@ final class FauxFur implements MaterialsFurnitureInterface
         $haystack = [
             mb_strtolower(self::MATERIAL),
             'мех искусственный',
-            'faux fur'
+            'faux fur',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

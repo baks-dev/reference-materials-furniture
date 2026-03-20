@@ -36,14 +36,6 @@ final class NaturalGranite implements MaterialsFurnitureInterface
     public const string MATERIAL = 'NATURAL_GRANITE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,5 +54,13 @@ final class NaturalGranite implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'натуральный гранит', 'natural granite'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

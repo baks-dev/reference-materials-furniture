@@ -73,26 +73,34 @@ final class MaterialsFurniture
 
     }
 
-
-    public function __toString(): string
-    {
-        return $this->material->getValue();
-    }
-
-
     /** Возвращает значение MaterialsFurnitureInterface */
     public function getMaterial(): ?MaterialsFurnitureInterface
     {
         return $this->material;
     }
 
+    public static function getDeclared(): array
+    {
+        return array_filter(
+            get_declared_classes(),
+            static function($className) {
+                return in_array(MaterialsFurnitureInterface::class, class_implements($className), true);
+            },
+        );
+    }
+
+    public function equals(mixed $status): bool
+    {
+        $status = new self($status);
+
+        return $this->getMaterialValue() === $status->getMaterialValue();
+    }
 
     /** Возвращает значение ColorsInterface */
     public function getMaterialValue(): ?string
     {
         return $this->material?->getValue();
     }
-
 
     public static function cases(): array
     {
@@ -110,22 +118,9 @@ final class MaterialsFurniture
         return $case;
     }
 
-
-    public static function getDeclared(): array
+    public function __toString(): string
     {
-        return array_filter(
-            get_declared_classes(),
-            static function($className) {
-                return in_array(MaterialsFurnitureInterface::class, class_implements($className), true);
-            }
-        );
-    }
-
-    public function equals(mixed $status): bool
-    {
-        $status = new self($status);
-
-        return $this->getMaterialValue() === $status->getMaterialValue();
+        return $this->material->getValue();
     }
 
 }

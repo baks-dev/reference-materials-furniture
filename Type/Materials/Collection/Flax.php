@@ -36,14 +36,6 @@ final class Flax implements MaterialsFurnitureInterface
     public const string MATERIAL = 'FLAX';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,9 +54,17 @@ final class Flax implements MaterialsFurnitureInterface
             mb_strtolower(self::MATERIAL),
             'лен',
             'лён',
-            'flax'
+            'flax',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

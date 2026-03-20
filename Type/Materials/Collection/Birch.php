@@ -36,14 +36,6 @@ final class Birch implements MaterialsFurnitureInterface
     public const string MATERIAL = 'BIRCH';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,5 +53,13 @@ final class Birch implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'береза', 'массив березы', 'birch'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

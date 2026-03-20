@@ -36,14 +36,6 @@ final class MixMaterials implements MaterialsFurnitureInterface
     public const string MATERIAL = 'MIX_MATERIALS';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -60,9 +52,17 @@ final class MixMaterials implements MaterialsFurnitureInterface
 
         $haystack = [
             mb_strtolower(self::MATERIAL),
-            'пвх, пластик, пенопласт, ткань'
+            'пвх, пластик, пенопласт, ткань',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

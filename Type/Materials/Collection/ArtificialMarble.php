@@ -36,14 +36,6 @@ final class ArtificialMarble implements MaterialsFurnitureInterface
     public const string MATERIAL = 'ARTIFICIAL_MARBLE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -60,5 +52,13 @@ final class ArtificialMarble implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'искусственный мрамор', 'artificial marble'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

@@ -36,14 +36,6 @@ final class FoamPlastic implements MaterialsFurnitureInterface
     public const string MATERIAL = 'FOAM_PLASTIC';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,9 +53,17 @@ final class FoamPlastic implements MaterialsFurnitureInterface
         $haystack = [
             mb_strtolower(self::MATERIAL),
             'пенопласт',
-            'foam plastic'
+            'foam plastic',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

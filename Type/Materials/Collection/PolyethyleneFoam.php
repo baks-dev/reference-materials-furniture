@@ -36,14 +36,6 @@ final class PolyethyleneFoam implements MaterialsFurnitureInterface
     public const string MATERIAL = 'POLYETHYLENE_FOAM';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,9 +53,17 @@ final class PolyethyleneFoam implements MaterialsFurnitureInterface
         $haystack = [
             mb_strtolower(self::MATERIAL),
             'пенополиэтилен',
-            'polyethylene foam'
+            'polyethylene foam',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

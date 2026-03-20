@@ -36,14 +36,6 @@ final class Oak implements MaterialsFurnitureInterface
     public const string MATERIAL = 'OAK';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -63,9 +55,17 @@ final class Oak implements MaterialsFurnitureInterface
             'дуб',
             'шпон дуба',
             'массив дуба',
-            'oak'
+            'oak',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

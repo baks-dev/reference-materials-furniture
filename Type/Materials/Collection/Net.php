@@ -36,14 +36,6 @@ final class Net implements MaterialsFurnitureInterface
     public const string MATERIAL = 'NET';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,9 +54,17 @@ final class Net implements MaterialsFurnitureInterface
             mb_strtolower(self::MATERIAL),
             'сетка',
             'синтетическая дышащая сетка',
-            'net'
+            'net',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

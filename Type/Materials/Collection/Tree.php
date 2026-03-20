@@ -36,14 +36,6 @@ final class Tree implements MaterialsFurnitureInterface
     public const string MATERIAL = 'TREE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -63,9 +55,17 @@ final class Tree implements MaterialsFurnitureInterface
             'дерево',
             'массив дерева',
             'цельный спил дерева',
-            'tree'
+            'tree',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

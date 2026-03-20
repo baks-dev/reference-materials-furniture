@@ -39,14 +39,6 @@ final class DSP implements MaterialsFurnitureInterface
     public const string MATERIAL = 'DSP';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -64,5 +56,13 @@ final class DSP implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'дсп', 'dsp'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

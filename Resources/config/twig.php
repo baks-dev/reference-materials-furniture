@@ -30,7 +30,7 @@ return static function(TwigConfig $twig) {
 
     $twig->path(
         BaksDevReferenceMaterialsFurnitureBundle::PATH.implode(DIRECTORY_SEPARATOR, ['Resources', 'view', '']),
-        'reference-materials-furniture'
+        'reference-materials-furniture',
     );
 
 };

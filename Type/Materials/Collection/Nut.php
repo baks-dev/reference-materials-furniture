@@ -36,14 +36,6 @@ final class Nut implements MaterialsFurnitureInterface
     public const string MATERIAL = 'NUT';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -66,9 +58,17 @@ final class Nut implements MaterialsFurnitureInterface
             'чёрный орех',
             'black walnut',
             'black walnut',
-            'nut'
+            'nut',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

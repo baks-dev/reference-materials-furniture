@@ -36,14 +36,6 @@ final class NubuckArtificial implements MaterialsFurnitureInterface
     public const string MATERIAL = 'NUBUCK_ARTIFICIAL';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,9 +53,17 @@ final class NubuckArtificial implements MaterialsFurnitureInterface
         $haystack = [
             mb_strtolower(self::MATERIAL),
             'нубук искусственный',
-            'artificial nubuck'
+            'artificial nubuck',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

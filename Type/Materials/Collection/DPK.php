@@ -35,14 +35,6 @@ final class DPK implements MaterialsFurnitureInterface
     public const string MATERIAL = 'DPK';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -60,5 +52,13 @@ final class DPK implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'дпк', 'дпк (древесно-полимерный композит)', 'dpk'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

@@ -36,14 +36,6 @@ final class Metal implements MaterialsFurnitureInterface
     public const string MATERIAL = 'METAL';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,9 +54,17 @@ final class Metal implements MaterialsFurnitureInterface
             mb_strtolower(self::MATERIAL),
             'металл',
             'металлический сплав',
-            'metal'
+            'metal',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

@@ -36,14 +36,6 @@ final class CeramicTiles implements MaterialsFurnitureInterface
     public const string MATERIAL = 'CERAMIC_TILES';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,5 +54,13 @@ final class CeramicTiles implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'керамическая плитка', 'ceramic tiles'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

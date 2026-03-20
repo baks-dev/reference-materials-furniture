@@ -36,14 +36,6 @@ final class BlackWalnut implements MaterialsFurnitureInterface
     public const string MATERIAL = 'BLACK_WALNUT';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,5 +54,13 @@ final class BlackWalnut implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'чёрный орех', 'черный орех', 'black walnut'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

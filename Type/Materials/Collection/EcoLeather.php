@@ -36,14 +36,6 @@ final class EcoLeather implements MaterialsFurnitureInterface
     public const string MATERIAL = 'ECO_LEATHER';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,9 +54,17 @@ final class EcoLeather implements MaterialsFurnitureInterface
             mb_strtolower(self::MATERIAL),
             'экокожа',
             'перфорированная экокожа',
-            'eco-leather'
+            'eco-leather',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

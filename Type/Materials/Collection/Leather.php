@@ -36,14 +36,6 @@ final class Leather implements MaterialsFurnitureInterface
     public const string MATERIAL = 'LEATHER';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -62,9 +54,17 @@ final class Leather implements MaterialsFurnitureInterface
             mb_strtolower(self::MATERIAL),
             'натуральная кожа',
             'кожа',
-            'leather'
+            'leather',
         ];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

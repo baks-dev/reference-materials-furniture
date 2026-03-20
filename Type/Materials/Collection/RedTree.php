@@ -36,14 +36,6 @@ final class RedTree implements MaterialsFurnitureInterface
     public const string MATERIAL = 'RED_TREE';
 
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string
-    {
-        return self::MATERIAL;
-    }
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int
@@ -61,5 +53,13 @@ final class RedTree implements MaterialsFurnitureInterface
         $haystack = [mb_strtolower(self::MATERIAL), 'красное дерево'];
 
         return in_array($material, $haystack);
+    }
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string
+    {
+        return self::MATERIAL;
     }
 }

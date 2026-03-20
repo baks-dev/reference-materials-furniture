@@ -29,11 +29,6 @@ use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 interface MaterialsFurnitureInterface
 {
     /**
-     * Возвращает значение (value)
-     */
-    public function getValue(): string;
-
-    /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
      */
     public static function sort(): int;
@@ -42,5 +37,10 @@ interface MaterialsFurnitureInterface
      * Проверяет, относится ли  материал к данному объекту
      */
     public static function equals(string $material): bool;
+
+    /**
+     * Возвращает значение (value)
+     */
+    public function getValue(): string;
 
 }
